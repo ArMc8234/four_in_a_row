@@ -7,14 +7,90 @@
     <title>Four in a Row</title>
 </head>
 <body>
-    <!-- Start Game Button -->
-    <!-- #game-scene: container for entire play area
+
+    <!-- 
+        Start Game Button 
+    -->
+
+        <button id="begin_game">
+            Start Game
+        </button>
+
+    <!-- 
+        #game-scene: container for entire play area
          #play-area: container for the board
-         .stand-container: the virtual board's vertical support...like the real game! -->
-    <!-- #game-over: hidden container that will display the game over message at the end -->
-    <!-- SVGs were used to create the board and the holes for the generated spaces -->
-    <!-- .stand-container: the board's vertical support stands -->
+         .stand-container: the virtual board's vertical support...like the real game!
+     -->
+
+         <div id="game-scene">
+             <div id="play-area">
+                 <div class="stand-container left">
+                     <div class="stand-leg">                       
+                     </div>
+
+                     <div class="stand-foot">                       
+                     </div>    
+
+                     <div class="stand-attachment">                       
+                     </div>                  
+                 </div>
+
+
+                 <!-- 
+                     #game-over: hidden container that will display the game over message at the end 
+                 -->
+                 <div id="game-over">
+                 </div>
+
+
+                 <!-- 
+                     #game-board-underlay: container for HTML tokens
+                  -->
+
+                 <div id="game-board-underlay">
+                     <div id="token" data-column = "0">
+                     </div>
+                 </div>
+                         
+                 
+                 <!-- 
+                     SVGs were used to create the board and the holes for the generated spaces
+                 -->
+                 <svg id = "game-board">
+                    <defs>
+						<!--
+							#mask: container for Space SVGs 
+						-->
+                        <mask id="mask" x="0" y="0" width="548" height="472">
+                            <rect x = "0" y = "0" height = "472" width = "548" fill = "white">
+                        </mask>
+                    </defs>
+                    
+                    <rect id = "board-back" x="0" y="0" width="548" height="472" mask="url(#mask)" fill-opacity = "1" fill = "#5FCF80"/>
+            	</svg>
+
+
+                <!-- .
+                    stand-container: the board's vertical support stands
+                 -->
+                 <div class="stand-container right">
+                     <div class="stand-leg">                       
+                     </div>
+
+                     <div class="stand-foot">                       
+                     </div>                  
+                     
+                     <div class="stand-attachment right">                       
+                     </div>                  
+                 </div>
+
+                 <div style="clear: both"></div>
+             </div>
+         </div>
     <!-- .table: so the board doesn't look like it's floating -->
+         <div class="table">
+         </div>
+             
 </body>
 </html>
 
